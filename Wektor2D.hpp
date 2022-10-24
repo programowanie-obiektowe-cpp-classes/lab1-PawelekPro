@@ -1,44 +1,49 @@
-#include <iostream>
-using namespace std;
-
 class Wektor2D
 {
-private:
-    double X;
-    double Y;
-
 public:
-    Wektor2D(double x = 0., double y = 0.)
+    Wektor2D()
     {
-        X = x;
-        Y = y;
-    };
+        wspX = .0;
+        wspY = .0;
+    }
+
     Wektor2D(double xx, double yy)
     {
-        x = xx;
-        y = yy;
+        wspX = xx;
+        wspY = yy;
+    }
+
+    void   setX(double aa) 
+    { 
+        wspX = aa; 
     };
-    
-    double getX() { return X; };
-    double getY() { return Y; };
 
+    double getX() 
+    { 
+        return wspX; 
+    };
 
-    void   setX(double x) { X = x; };
-    void   setY(double y) { Y = y; };
+    void   setY(double aa) 
+    { 
+        wspY = aa; 
+    };
 
-    
+    double getY() 
+    { 
+        return wspY; 
+    };
 
-    Wektor2D operator+(const Wektor2D &v1)
+    friend Wektor2D operator+(Wektor2D v1, Wektor2D v2)
     {
-        Wektor2D sum;
-        sum.X = X + v1.X;
-        sum.Y = Y + v1.Y;
-        return sum;
+        return Wektor2D(v1.getX() + v2.getX(), v1.getY() + v2.getY());
     };
 
-    double operator*(const Wektor2D &v1) 
+    friend double operator*(Wektor2D v1, Wektor2D v2)
     {
-        return X * v1.X + Y * v1.Y; 
+        return v1.getX() * v2.getX() + v1.getY() * v2.getY();
     };
 
+private:
+    double wspX;
+    double wspY;
 };
