@@ -13,9 +13,9 @@ public:
         wspY = yy;
     }
 
-    void   setX(double aa) 
+    void   setX(double X) 
     { 
-        wspX = aa; 
+        wspX = X; 
     };
 
     double getX() 
@@ -23,9 +23,9 @@ public:
         return wspX; 
     };
 
-    void   setY(double aa) 
+    void   setY(double Y) 
     { 
-        wspY = aa; 
+        wspY = Y; 
     };
 
     double getY() 
@@ -33,14 +33,14 @@ public:
         return wspY; 
     };
 
-    friend Wektor2D operator+(Wektor2D v1, Wektor2D v2)
+    friend Wektor2D operator+(Wektor2D vec_1, Wektor2D vec_2)
     {
-        return Wektor2D(v1.getX() + v2.getX(), v1.getY() + v2.getY());
+        return Wektor2D(vec_1.getX() + vec_2.getX(), vec_1.getY() + vec_2.getY());
     };
 
-    friend double operator*(Wektor2D v1, Wektor2D v2)
+    friend double operator*(Wektor2D vec_1, Wektor2D vec_2)
     {
-        return v1.getX() * v2.getX() + v1.getY() * v2.getY();
+        return vec_1.getX() * vec_2.getX() + vec_1.getY() * vec_2.getY();
     };
 
 private:
